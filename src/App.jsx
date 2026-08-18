@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar.jsx";
 import { Home } from "./pages/Home.jsx";
 import { Toaster } from "react-hot-toast";
 import Footer from "./components/Footer.jsx";
+import Products from "./pages/Products.jsx";
 
 const App = () => {
   const isSellerPath = useLocation().pathname.includes("seller");
@@ -17,6 +18,7 @@ const App = () => {
       <div className={isSellerPath ? "" : "px-6 md:px-12 lg:px-24 rounded-xl"}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/all-products" element={<Products/>} />
         </Routes>
       </div>
 

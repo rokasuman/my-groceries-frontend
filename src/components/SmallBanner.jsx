@@ -1,6 +1,5 @@
 import { assets, features } from "../assets/assets";
 
-
 const SmallBanner = () => {
   return (
     <div className="mt-8 px-2 md:px-4">
@@ -51,7 +50,14 @@ const SmallBanner = () => {
           </div>
         </div>
       </div>
-      
+      <div className="flex justify-center items-center gap-3 sm:gap-6 mt-4 mb-4">
+        <img
+          src={assets.play_store}
+          alt="Play Store"
+          className="w-full sm:w-32"
+        />
+        <img src={assets.app_store} alt="App Store" className="w-full sm:w-32" />
+      </div>
     </div>
   );
 };
