@@ -13,7 +13,7 @@ const BestSeller = () => {
 
   return (
     <div className="mt-8 px-2 md:px-4">
-      <h2 className="mb-1 text-2xl font-bold text-gray-800">Best Seller</h2>
+      <h2 className="mb-1 text-2xl font-bold text-gray-800">Best Selling</h2>
 
       <p className="mb-8 text-gray-500">
         Our most-loved picks, all in one place.
