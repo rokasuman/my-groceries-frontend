@@ -50,7 +50,7 @@ const SmallBanner = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center gap-3 sm:gap-6 mt-4 mb-4">
+      <div className="flex justify-center items-center gap-3 sm:gap-6 mt-8 mb-4">
         <img
           src={assets.play_store}
           alt="Play Store"

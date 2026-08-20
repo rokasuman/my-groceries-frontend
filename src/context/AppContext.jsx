@@ -10,11 +10,12 @@ export const AppContextProvder = ({ children }) => {
   const navigate = useNavigate();
 
   //creating a state for user and the admin
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(null);
   const [seller, setIsSeller] = useState(false);
-  const [showUserLogin, setShowUserLogin] = useState(false);
+  const [showUserLogin,setShowUserLogin ] = useState(false);
   const [product, setProduct] = useState([]);
   const [cartItems, setCardItems] = useState({});
+  const [searchQurey, setSearchQurey] = useState("")
 
   //function to fetch the product
   const fetchProduct = () => {
@@ -73,7 +74,9 @@ export const AppContextProvder = ({ children }) => {
     addToCart,
     updateCart,
     removeFromCart,
-    cartItems
+    cartItems,
+    searchQurey,
+    setSearchQurey
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

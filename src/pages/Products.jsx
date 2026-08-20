@@ -7,7 +7,13 @@ const Products = () => {
     addToCart,
     removeFromCart,
     cartItems,
+    searchQurey
   } = UseAppContext();
+
+ const filteredProducts = product.filter((item) =>
+  item.name?.toLowerCase().includes(searchQurey.toLowerCase())
+);
+
 
   return (
     <div className="mt-10 px-4 md:px-8 lg:px-12">
@@ -18,7 +24,7 @@ const Products = () => {
 
       {/* Product Grid */}
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
-        {product.map((item) => {
+        {filteredProducts.map((item) => {
           const quantity = cartItems[item._id] || 0;
 
           return (
