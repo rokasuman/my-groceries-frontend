@@ -12,7 +12,7 @@ const Categories = () => {
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
         {categories.map((category) => (
           <div
-            onClick={()=>navigate(`product/${category.path.toLowerCase()}`,scrollTo(0,0))} 
+            onClick={()=>navigate(`/product/${category.path.toLowerCase()}`,scrollTo(0,0))} 
             key={category.path}
             style={{ backgroundColor: category.bgColor }}
             className="flex cursor-pointer flex-col items-center justify-center rounded-xl p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-md"

@@ -8,6 +8,9 @@ import Products from "./pages/Products.jsx";
 import Contact from "./pages/Contact.jsx";
 import { UseAppContext } from "./context/AppContext.jsx";
 import Login from "./components/Login.jsx";
+import CategoriesPage from "./pages/CategoriesPage.jsx";
+
+
 
 const App = () => {
   const isSellerPath = useLocation().pathname.includes("seller");
@@ -24,6 +27,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/all-products" element={<Products />} />
+           <Route path="/product/:category" element={<CategoriesPage/>} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
