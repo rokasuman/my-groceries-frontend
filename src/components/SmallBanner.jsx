@@ -50,13 +50,20 @@ const SmallBanner = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center items-center gap-3 sm:gap-6 mt-8 mb-4">
-        <img
-          src={assets.play_store}
-          alt="Play Store"
-          className="w-full sm:w-32"
-        />
-        <img src={assets.app_store} alt="App Store" className="w-full sm:w-32" />
+      <div>
+        <div className="flex justify-center items-center gap-3 sm:gap-6 mt-10 mb-4">
+          <img
+            src={assets.play_store}
+            alt="Play Store"
+            className="w-28 sm:w-32 h-auto object-contain"
+          />
+
+          <img
+            src={assets.app_store}
+            alt="App Store"
+            className="w-28 sm:w-32 h-auto object-contain"
+          />
+        </div>
       </div>
     </div>
   );

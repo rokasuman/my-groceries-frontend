@@ -1,24 +1,21 @@
-import { UseAppContext } from '../context/AppContext';
-import { useParams } from 'react-router-dom';
-import { categories } from '../assets/assets';
+import { UseAppContext } from "../context/AppContext";
+import { useParams } from "react-router-dom";
+import { categories } from "../assets/assets";
 
 const CategoriesPage = () => {
-  const { product } = UseAppContext();
+  const { product, navigate } = UseAppContext();
   const { category } = useParams();
 
   const selectedCategory = categories.find(
-    (item) =>
-      item.path.toLowerCase() === category?.toLowerCase()
+    (item) => item.path.toLowerCase() === category?.toLowerCase(),
   );
 
   const filteredProducts = product.filter(
-    (item) =>
-      item.category?.toLowerCase() === category?.toLowerCase()
+    (item) => item.category?.toLowerCase() === category?.toLowerCase(),
   );
 
   return (
     <div className="py-10">
-      
       {/* Category heading */}
       <div className="mb-8">
         <h1 className="text-3xl font-semibold text-gray-800">
@@ -35,6 +32,7 @@ const CategoriesPage = () => {
         {filteredProducts.map((item) => (
           <div
             key={item._id}
+            onClick={() => navigate(`/product/${category}/${item._id}`)}
             className="overflow-hidden rounded-xl border border-gray-200 bg-white transition hover:-translate-y-1 hover:shadow-lg"
           >
             <div className="flex h-48 items-center justify-center bg-gray-50 p-4">
@@ -61,12 +59,9 @@ const CategoriesPage = () => {
       {/* No products */}
       {filteredProducts.length === 0 && (
         <div className="py-16 text-center">
-          <p className="text-gray-500">
-            No products found in this category.
-          </p>
+          <p className="text-gray-500">No products found in this category.</p>
         </div>
       )}
-
     </div>
   );
 };
