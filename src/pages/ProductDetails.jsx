@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { UseAppContext } from "../context/AppContext";
 import { useParams } from "react-router-dom";
 
@@ -175,6 +175,7 @@ const ProductDetails = () => {
             </button>
 
             <button
+            onClick={()=>{addToCart(products._id); navigate("/cart")}}
               className="w-full py-3.5 cursor-pointer font-medium bg-primary text-white hover:bg-green-800 transition"
             >
               Buy now
