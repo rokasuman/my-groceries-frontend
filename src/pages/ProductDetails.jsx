@@ -175,7 +175,7 @@ const ProductDetails = () => {
             </button>
 
             <button
-            onClick={()=>{addToCart(products._id); navigate("/cart")}}
+            onClick={()=>{addToCart(products._id); navigate(`/product/category/cart/${id}`)}}
               className="w-full py-3.5 cursor-pointer font-medium bg-primary text-white hover:bg-green-800 transition"
             >
               Buy now
