@@ -1,3 +1,4 @@
+
 import { assets } from "../assets/assets";
 import { UseAppContext } from "../context/AppContext";
 
@@ -95,6 +96,29 @@ const Footer = () => {
 
         </div>
 
+        {/* Disclaimer */}
+        <div className="mt-8 px-4 py-4 text-center border border-red-200 bg-red-50 rounded-md">
+          <p className="text-red-600 font-semibold leading-6">
+            Disclaimer: This website was made for learning purposes only.
+            All photos used on this website were taken from Amazon Australia.
+            Please do not make any transactions or payments through this
+            website.
+          </p>
+
+          <p className="text-red-600 mt-2 leading-6">
+            If you have made any transaction or payment, please contact
+            <span className="font-semibold"> Suman Roka </span>
+            at{" "}
+            <a
+              href="mailto:roka7362@gmail.com"
+              className="font-semibold underline hover:text-red-800"
+            >
+              roka7362@gmail.com
+            </a>
+            .
+          </p>
+        </div>
+
         {/* Copyright */}
         <p className="py-4 text-center border-t mt-8 border-slate-200">
           Copyright 2026 © <span>GreenCart</span> All Rights Reserved.
@@ -106,3 +130,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

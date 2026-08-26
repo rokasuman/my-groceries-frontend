@@ -28,6 +28,7 @@ const Categories = () => {
             </p>
           </div>
         ))}
+       
       </div>
     </section>
   );

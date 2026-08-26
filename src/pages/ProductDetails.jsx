@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { UseAppContext } from "../context/AppContext";
 import { useParams } from "react-router-dom";
 
@@ -17,8 +17,7 @@ const ProductDetails = () => {
     if (products) {
       const copyProduct = product.filter(
         (item) =>
-          item.category === products.category &&
-          item._id !== products._id
+          item.category === products.category && item._id !== products._id,
       );
 
       setRelatedProduct(copyProduct.slice(0, 5));
@@ -93,9 +92,7 @@ const ProductDetails = () => {
 
         {/* Product information */}
         <div className="text-sm w-full md:w-1/2">
-          <h1 className="text-3xl font-medium">
-            {products.name}
-          </h1>
+          <h1 className="text-3xl font-medium">{products.name}</h1>
 
           {/* Rating */}
           <div className="flex items-center gap-0.5 mt-2">
@@ -131,33 +128,23 @@ const ProductDetails = () => {
                       fillOpacity="0.35"
                     />
                   </svg>
-                )
+                ),
               )}
 
-            <p className="text-base ml-2">
-              ({products.rating})
-            </p>
+            <p className="text-base ml-2">({products.rating})</p>
           </div>
 
           {/* Price */}
           <div className="mt-6">
-            <p className="text-gray-500/70 line-through">
-              ${products.price}
-            </p>
+            <p className="text-gray-500/70 line-through">${products.price}</p>
 
-            <p className="text-2xl font-medium">
-               ${products.offerPrice}
-            </p>
+            <p className="text-2xl font-medium">${products.offerPrice}</p>
 
-            <span className="text-gray-500/70">
-              (inclusive of all taxes)
-            </span>
+            <span className="text-gray-500/70">(inclusive of all taxes)</span>
           </div>
 
           {/* Description */}
-          <p className="text-base font-medium mt-6">
-            About Product
-          </p>
+          <p className="text-base font-medium mt-6">About Product</p>
 
           <ul className="list-disc ml-4 text-gray-500/70">
             {products.description?.map((desc, index) => (
@@ -175,7 +162,10 @@ const ProductDetails = () => {
             </button>
 
             <button
-            onClick={()=>{addToCart(products._id); navigate(`/product/category/cart/${id}`)}}
+              onClick={() => {
+                addToCart(products._id);
+                navigate(`/product/category/cart/${id}`);
+              }}
               className="w-full py-3.5 cursor-pointer font-medium bg-primary text-white hover:bg-green-800 transition"
             >
               Buy now
@@ -196,9 +186,7 @@ const ProductDetails = () => {
               <div
                 key={item._id}
                 onClick={() =>
-                  navigate(
-                    `/product/${item.category}/${item._id}`
-                  )
+                  navigate(`/product/${item.category}/${item._id}`)
                 }
                 className="overflow-hidden rounded-xl border border-gray-200 bg-white transition hover:-translate-y-1 hover:shadow-lg cursor-pointer"
               >
@@ -221,6 +209,23 @@ const ProductDetails = () => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="mt-4 flex justify-center">
+            <button
+              type="button"
+              className="cursor-pointer rounded-4xl bg-green-900 px-6 py-3 text-white transition hover:bg-green-800"
+              onClick={() => {
+                navigate("/all-products");
+
+                window.scrollTo({
+                  top: 0,
+                  left: 0,
+                  behavior: "smooth",
+                });
+              }}
+            >
+              See More
+            </button>
           </div>
         </div>
       )}
