@@ -57,6 +57,33 @@ export const AppContextProvder = ({ children }) => {
     toast.success("Cart updated Successfully");
   };
 
+  //get the total cart item
+  const getTotalItem = ()=>{
+    let totalItem = 0;
+    for(const item in cartItems){
+      totalItem += cartItems[item]
+    }
+    return totalItem;
+  }
+
+  //get the total amount
+  // Get the total cart amount
+const getTotalCartAmount = () => {
+  let totalAmount = 0;
+
+  for (const item in cartItems) {
+    const productInfo = product.find(
+      (product) => product._id === item
+    );
+
+    if (productInfo) {
+      totalAmount += productInfo.offerPrice * cartItems[item];
+    }
+  }
+
+  return totalAmount;
+};
+
   useEffect(() => {
     fetchProduct();
   }, []);
@@ -76,7 +103,9 @@ export const AppContextProvder = ({ children }) => {
     removeFromCart,
     cartItems,
     searchQurey,
-    setSearchQurey
+    setSearchQurey,
+    getTotalItem,
+    getTotalCartAmount
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
