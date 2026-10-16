@@ -155,7 +155,8 @@ const ProductDetails = () => {
           {/* Buttons */}
           <div className="flex items-center mt-10 gap-4 text-base">
             <button
-              onClick={() => addToCart(products._id)}
+              
+              onClick={() => {addToCart(products._id);navigate("/cart");}}
               className="w-full py-3.5 cursor-pointer font-medium bg-gray-100 text-gray-800/80 hover:bg-gray-200 transition"
             >
               Add to Cart
@@ -164,7 +165,7 @@ const ProductDetails = () => {
             <button
               onClick={() => {
                 addToCart(products._id);
-                navigate(`/product/category/cart/${id}`);
+                navigate("/cart");
               }}
               className="w-full py-3.5 cursor-pointer font-medium bg-primary text-white hover:bg-green-800 transition"
             >
